@@ -1,13 +1,57 @@
 # Challenge 1 - UFCFVK-15-2 - Internet of Things
 
-## Introduction
+## Overview
+We were challenged to implement a simple game using the BBC Micro:Bit device within a 
+two week period. Details of the specification are below.
+
+My solution to this challenge is a form of the classic game Rock, Paper, Scissors. It 
+takes advantage of both buttons for the item selection and the accelerometer to detect a 
+shake which confirmes item selection. For single player mode, the computer randomly 
+decides on its item and confirms whether the player has won, lost, or drawn.
+For 2 player mode, the Micro:Bit's radio is used to communicate between two Micro:Bit
+devices.
 
 ## Task Specification
+(This information is copied from the Assignement brief found on Blackboard).
+
+Implement a simple game on the BBC Microbit that uses the LED matrix and at least two
+buttons or other sensors on the device.
+
+Your solution should be implemented using C++.
+
+Your solution must be committed in UWE's Gitlab. It will naturally be time stamped and you
+must be careful to not make commits after the submission deadline.
+
+Implementing the bare requirements described above will enable you to reach a maximum
+of 70%, to get beyond that you must surprise us.
+
+Your solution's source code should follow a coding convention, it should be well
+commented, and include a README.md on how to build it and what and how to "play" it.
+
+### Installation of game
+#### Prerequisites
+In order to run this game, you will need the following hardware/software:
+- At least one BBC Micro:Bit (two for 2 Player mode) and Micro USB cable (you can purchase 
+one from Amazon, for example, https://tinyurl.com/ycs96p9e)
+- A running copy of this virtual machine: https://tinyurl.com/ya59un4m You can get login credentials from XXX (University of the West of England)
+
+#### How-To
+1. Open a Terminal window within the VM you've downloaded (see Prerequisites, above).
+2. cd to the folder you wish to store the code for the game
+3. git clone https://gitlab.uwe.ac.uk/p3-goddard/ufcfvk-15-2-iot-challenge-1.git
+4. cd ufcfvk-15-2-iot-challenge-1/game code
+5. yt target bbc-microbit-classic-gcc
+6. yt build
+7. Connect your Micro:Bit via USB to your computer.
+8. cp build/bbc-microbit-classic-gcc/source/iot-rps-2player-combined.hex /media/student/MICROBIT
+9. If you want to play against another player, remove the Micro:Bit and repeat steps 7 and 8 for the second Micro:Bit
+
+Now you are ready to play. See Game Play for instructions on how to play.
 
 ## Game Play
+xxx
 
 ## Technical Details
-
 ### Class Breakdown
 
 #### Player
@@ -37,9 +81,7 @@ Inherites Player.
 
 not using uBit as a whole, but the individual elements
 
-
 ## References
 
-(Use UWE Harvard)
-- https://lancaster-university.github.io/microbit-docs/
-- https://github.com/lancaster-university/microbit-dal/issues/372
+Lancaster University (2018) micro:bit runtime. Available from: https://lancaster-university.github.io/microbit-docs/ [Accessed 28 January 2019].
+Atencio, CP / Micro:bit Educational Foundation (2018) Tight loop checking gestures does not recognise shake. Available from: https://github.com/lancaster-university/microbit-dal/issues/372 [Accessed 02 February 2019].

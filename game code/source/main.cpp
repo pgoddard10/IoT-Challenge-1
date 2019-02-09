@@ -22,7 +22,7 @@
 #define	COMPUTER	0
 #define	FRIEND		1
 
-//global variables to workaround for uBit.accelerometer.getGesture() not working
+//global variables to workaround for uBit.accelerometer.getGesture() not working.
 u_int8_t opponent_confirmed = 0;
 u_int8_t item_confirmed = 0;
 int8_t opponent_item = -1; //signed because of negative number
