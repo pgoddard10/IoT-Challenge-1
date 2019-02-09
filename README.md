@@ -72,7 +72,7 @@ Use the `reset` button to play a new game.
 
 ## Technical Details
 ### Class Breakdown
-![Class Diagram](https://gitlab.uwe.ac.uk/p3-goddard/ufcfvk-15-2-iot-challenge-1/*****/class_diagram.png)
+![Class Diagram](https://gitlab.uwe.ac.uk/p3-goddard/ufcfvk-15-2-iot-challenge-1/blob/master/ClassDiagram.png)
 
 #### Player
 This is the parent class for forming the two child classes.
