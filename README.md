@@ -28,14 +28,20 @@ of 70%, to get beyond that you must surprise us.
 Your solution's source code should follow a coding convention, it should be well
 commented, and include a README.md on how to build it and what and how to "play" it.
 
-### Installation of game
-#### Prerequisites
+## Hardware
+The game will only work on a BBC Micro:Bit. The diagram below shows the sensors, button 
+and component positions, which may be of use when installing and playing the game.
+![Micro:Bit Hardware Diagram](https://tech.microbit.org/docs/hardware/assets/microbit-overview-1-5.png)
+
+## Installation of game
+### Prerequisites
 In order to run this game, you will need the following hardware/software:
 - At least one BBC Micro:Bit (two for 2 Player mode) and Micro USB cable (you can purchase 
 one from Amazon, for example, https://tinyurl.com/ycs96p9e)
-- A running copy of this virtual machine: https://tinyurl.com/ya59un4m You can get login credentials from XXX (University of the West of England)
+- A running copy of this virtual machine: https://tinyurl.com/ya59un4m You can get login 
+credentials from XXX (University of the West of England)
 
-#### How-To
+### How-To
 1. Open a Terminal window within the VM you've downloaded (see Prerequisites, above).
 2. `cd` to the folder you wish to store the code for the game
 3. `git clone https://gitlab.uwe.ac.uk/p3-goddard/ufcfvk-15-2-iot-challenge-1.git`
@@ -44,25 +50,25 @@ one from Amazon, for example, https://tinyurl.com/ycs96p9e)
 6. `yt build`
 7. Connect your Micro:Bit via USB to your computer.
 8. `cp build/bbc-microbit-classic-gcc/source/iot-rps-2player-combined.hex /media/student/MICROBIT`
-9. If you want to play against another player, remove the Micro:Bit and repeat steps 7 and 8 for the second Micro:Bit
+9. If you want to play against another player, remove the Micro:Bit and repeat steps 7 and 8 
+for the second Micro:Bit
 
 Now you are ready to play. See Game Play for instructions on how to play.
 
 ## Game Play
-Computer vs Friend
-Rock / Paper / Scissors
-In the 2 Player mode, you will be prompted to Wait until your friend has made their selection
-Results displayed
+The table below takes you through the sequence of events possible within the game.
+The Micro:Bit LED matrix is only 5x5 and the scrolling text can be frustrating for the user.
+With this in mind, the game play mostly uses single characters to display messages to the user.
+This table explains what those characters mean and what user input is available when displayed.
 
+| Order              | What is displayed | What this means                                          | User Interaction                                                                     |
+|--------------------| ------------------|----------------------------------------------------------|--------------------------------------------------------------------------------------|
+| 1.                 | `C` or `F`        | Your competitor: Play against the computer or a Friend   | Switch between the two using the left (A) and right (B) buttons. Shake to confirm.   |
+| 2.   	             | `R` or `P` or `S` | Your item selection: Rock, Paper or Scissors             | Switch item selection by using the left (A) and right (B) buttons. Shake to confirm. |
+| 3. (2 Player only) | `Wait...`         | Wait for your friend to select their item.               | None.                                                                                |
+| 4.                 | `W` or `L` or `D` | The game results: Win, Lose or Draw                      | None.                                                                                |
 
-| Order | What is displayed | What this means                                                       | User Interaction                                                             |
-|-------| ------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------|
-| 1.    | `C` or `F`        | Your competitor: Play against the computer or a Friend                | Switch between the two using the left and right buttons. Shake to confirm.   |
-| 2.    | `R` or `P` or `S` | Your item selection: Rock, Paper or Scissors                          | Switch item selection by using the left and right buttons. Shake to confirm. |
-| 3.    | `Wait...`         | (2 Player only) Wait for your friend to select their item.            | None.                                                                        |
-| 4.    | `W` or `L` or `D` | The game results: Win, Lose or Draw                                   | None.                                                                        |
-
-Use the `rest` button to play a new game.
+Use the `reset` button to play a new game.
 
 ## Technical Details
 ### Class Breakdown
@@ -97,6 +103,8 @@ not using uBit as a whole, but the individual elements
 
 ## References
 
-Lancaster University (2018) micro:bit runtime. Available from: https://lancaster-university.github.io/microbit-docs/ [Accessed 28 January 2019].
+Lancaster University (2018) *micro:bit runtime.* Available from: https://lancaster-university.github.io/microbit-docs/ [Accessed 28 January 2019].
 
-Atencio, CP / Micro:bit Educational Foundation (2018) Tight loop checking gestures does not recognise shake. Available from: https://github.com/lancaster-university/microbit-dal/issues/372 [Accessed 02 February 2019].
+Atencio, CP / Micro:bit Educational Foundation (2018) *Tight loop checking gestures does not recognise shake.* Available from: https://github.com/lancaster-university/microbit-dal/issues/372 [Accessed 02 February 2019].
+
+Micro:bit Educational Foundation (2018) *Hardware.* Available from: Hardware [Accessed 07 February 2019].
