@@ -31,7 +31,9 @@ commented, and include a README.md on how to build it and what and how to "play"
 ## Hardware
 The game will only work on a BBC Micro:Bit. The diagram below shows the sensors, button 
 and component positions, which may be of use when installing and playing the game.
+
 ![Micro:Bit Hardware Diagram](https://tech.microbit.org/docs/hardware/assets/microbit-overview-1-5.png)
+You can read more about the hardware on the Hardware page (Micro:bit Educational Foundation, 2018).
 
 ## Installation of game
 ### Prerequisites
