@@ -12,7 +12,7 @@ For 2 player mode, the Micro:Bit's radio is used to communicate between two Micr
 devices.
 
 ## Task Specification
-(This information is copied from the Assignement brief found on Blackboard).
+(This information is copied from the Assignment brief found on Blackboard).
 
 Implement a simple game on the BBC Microbit that uses the LED matrix and at least two
 buttons or other sensors on the device.
@@ -61,7 +61,7 @@ Now you are ready to play. See Game Play for instructions on how to play.
 ## Game Play
 The table below takes you through the sequence of events possible within the game.
 The Micro:Bit LED matrix is only 5x5 and the scrolling text can be frustrating for the user.
-With this in mind, the game play mostly uses single characters to display messages to the user.
+With this in mind, the gameplay mostly uses single characters to display messages to the user.
 This table explains what those characters mean and what user input is available when displayed.
 
 | Order              | What is displayed | What this means                                          | User Interaction                                                                     |
@@ -99,7 +99,7 @@ The functions it contains are:
 `void set_item_confirmed(u_int8_t item_confirmed)` updates the item_confirmed variable to that which is passed in
 
 #### Competitor
-Inherites Player.
+Inherits Player.
 
 It contains two variables:
 
@@ -111,7 +111,7 @@ The functions it contains are:
 
 `u_int8_t get_type()` returns the competitor type value (i.e. 0 or 1 for Computer or Friend, respectively).
 
-`u_int8_t is_competitor_confirmed()` returns 1 for true and 0 for false
+`u_int8_t is_competitor_confirmed()` returns whether the player has confirmed their competitor choice via a 1 for true and 0 for false
 
 `char get_type_name()` returns the competitors's name as a char (i.e. C for Computer, or F for Friend).
 
@@ -120,7 +120,7 @@ The functions it contains are:
 `void on_shake()` marks the competitor as confirmed, i.e. sets the confirmed variable to 1
 
 #### MyPlayer
-Inherites Player.
+Inherits Player.
 
 Contains no variables that are not inherited.
 
@@ -134,7 +134,7 @@ The functions it contains are:
 
 #### Interface
 
-`char pick_winner(u_int8_t my_item, u_int8_t opponent_item)` the item selection for this player, and the item selection for the competitor is passed into this function. It works out whether there is a win, lose or draw and displays W, L or D respectively onto the screen.
+`char pick_winner(u_int8_t my_item, u_int8_t opponent_item)` the item selection for this player, and the item selection for the competitor is passed into this function. It works out whether there is a win, lose or draw and displays W, L or D respectively.
 
 not using uBit as a whole, but the individual elements
 
@@ -150,7 +150,7 @@ An instance of `MicroBit` is used and called `uBit`. This contains the runtime c
 
 There are two `PacketBuffer` objects used: `pb_send` and `pb_recevied`. `pb_send` contains the item selecting being sent to the other Micro:Bit and `pb_received` contains the received item selection and the confirmation bit once a received message is broadcast.
 
-Objects of each classe described above are created and used:
+Objects of each class described above are created and used:
 `MyPlayer me`
 `Competitor opponent`
 `Interface intrfc`
@@ -164,10 +164,10 @@ Functions:
 ### Performance
 To save of memory, I used `u_int_8`, where possible, instead of the default 32 bit integers.
 
-During the works of this project, I attempted to save on memory by using the individual runtime components instead of creating an instance of the entire MicroBit object (usually named uBit). I was able to get all components I needed running apart from the Accelerometer. I searched the header files, and cpp files but couldn't find the code needed to get this working. I eventually raised a support ticket[3] for help and was provided with different code to use which did work. However, once this was up and running, I discovered that the volume of code needed for the Accelerometer to work was large and, after discussion with Ben, decided that the savings made by using the individual components would be minimal.
+During the works of this project, I attempted to save on memory by using the individual runtime components instead of creating an instance of the entire MicroBit object (usually named uBit). I was able to get all of the components I needed running apart from the Accelerometer. I searched the header files, and cpp files but couldn't find the code needed to get this working. I eventually raised a support ticket[3] for help and was provided with different code to use which did work. However, once this was up and running, I discovered that the volume of code needed for the Accelerometer to work was large and, after discussion with Ben, decided that the savings made by using the individual components would be minimal.
 
 ### Problems and Future Improvements
-The getGesture() function doesn't seem to work. I have used the accelerometer code provided in the support ticket I raised to the Micro:bit support and can confirm that related functions, getX() and getY() work, but getGesture() still fails. I have therefore used the listener within my main function and called a non-OOP function to register global variables, and then used those gloabl variables to call the OOP functions. This workaround is clearly marked in code, see lines 25-29, 37-44, 96-101 and 119 in main.cpp.
+The getGesture() function doesn't seem to work. I have used the accelerometer code provided in the support ticket I raised to the Micro:bit support and can confirm that related functions, getX() and getY() work, but getGesture() still fails. I have therefore used the listener within my main function and called a non-OOP function to register global variables, and then used those global variables to call the OOP functions. This workaround is clearly marked in code, see lines 25-29, 37-44, 96-101 and 119 in main.cpp.
 This also directly links to the issue of using OOP functions in listeners - which does not seem to be possible and therefore the workarounds take this into consideration.
 
 I took the decision not to pass my object of MicroBit into my classes in an attempt to improve the ideals behind my program. I was aiming for code reusability and to minimise passing the uBit object around. However, in building this project and content from other modules delivered during this project's run, I am now more familiar with OOP classes and will aim to make the code cleaner in future by using pointers to the uBit in future.

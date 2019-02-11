@@ -17,8 +17,8 @@
 
 Player::Player()
 {
-	item = ROCK;
-	item_confirmed = 0;
+	item = ROCK; //holds the selected item to play, i.e. rock, paper or scissors. These are represented by 0, 1 or 2 respectively.
+	item_confirmed = 0; //contains whether the player has confirmed their item choice.
 }
 
 
@@ -27,10 +27,12 @@ Player::~Player()
 }
 
 u_int8_t Player::get_item() {
+	//returns the item value (i.e. 0, 1 or 2 for rock, paper or scissors respectively).
 	return item;
 }
 
 char Player::get_item_name() {
+	//returns the item's name as a char (i.e. R, P or S for rock, paper or scissors respectively).
 	if (this->item == ROCK)
 		return 'R';
 	else if (this->item == PAPER)
@@ -40,13 +42,16 @@ char Player::get_item_name() {
 }
 
 u_int8_t Player::is_item_confirmed() {
+	//returns the boolean of item_confirmed
 	return item_confirmed;
 }
 
 void Player::set_item(u_int8_t item) {
+	//updates the item's value to that which is passed in
 	this->item = item;
 }
 
 void Player::set_item_confirmed(u_int8_t item_confirmed) {
+	//updates the item_confirmed variable to that which is passed in
 	this->item_confirmed = item_confirmed;
 }

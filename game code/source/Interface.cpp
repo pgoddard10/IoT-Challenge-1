@@ -22,6 +22,7 @@ Interface::~Interface()
 }
 
 char Interface::pick_winner(u_int8_t my_item, u_int8_t opponent_item) {
+	// the item selection for this player, and the item selection for the competitor is passed into this function. It works out whether there is a win, lose or draw and displays W, L or D respectively.
 	if ((my_item == ROCK) && (opponent_item == PAPER)) //rock vs paper
 		return 'L';
 	else if ((my_item == ROCK) && (opponent_item == SCISSORS)) //rock vs scissors
