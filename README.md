@@ -42,7 +42,7 @@ In order to run this game, you will need the following hardware/software:
 - At least one BBC Micro:Bit (two for 2 Player mode) and Micro USB cable (you can purchase 
 one from Amazon, for example, https://tinyurl.com/ycs96p9e)
 - A running copy of this virtual machine: https://tinyurl.com/ya59un4m You can get login 
-credentials from XXXXXXXXX (University of the West of England)
+credentials from Internet of Things Practical Week 1 (University of the West of England, 2019). [4]
 
 ### How-To
 1. Open a Terminal window within the VM you've downloaded (see Prerequisites, above).
