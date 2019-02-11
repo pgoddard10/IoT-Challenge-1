@@ -14,7 +14,6 @@ public:
 	Interface();
 	~Interface();
 	char pick_winner(u_int8_t my_item, u_int8_t opponent_item);
-	void send_item(u_int8_t item);
 };
 
 #endif
